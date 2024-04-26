@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+
+const allOrgs = await getCollection('organizations');
+---
+
+<ul>
+  {allOrgs.map((org) => (
+    <li>{org.data.name}</li>
+  ))}
+</ul>
