@@ -1,0 +1,16 @@
+---
+// title: Organization
+
+import Organization from '../../layouts/Organization.astro';
+import { getCollection } from 'astro:content';
+export const layout = '../../layouts/Organization.astro';
+
+export async function getStaticPaths() {
+  const orgs = await getCollection('organizations');
+  return orgs.map(org => ({
+    params: { slug: org.slug }, props: { org },
+  }));
+}
+---
+
+<Organization org={Astro.props.org} />

@@ -1,0 +1,10 @@
+---
+import Layout from './Layout.astro';
+
+const org = Astro.props?.org?.data;
+---
+
+<Layout title={org?.title}>
+  <h1>{org?.title}</h1>
+  <h2>{org?.location}</h2>
+</Layout>

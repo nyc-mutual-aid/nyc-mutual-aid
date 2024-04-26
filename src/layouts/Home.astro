@@ -1,0 +1,11 @@
+---
+import Layout from './Layout.astro';
+import Feed from '../components/Feed.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <Feed />
+</Layout>

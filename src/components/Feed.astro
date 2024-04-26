@@ -1,11 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const allOrgs = await getCollection('organizations');
+const allOrgs = await getCollection("organizations");
+const locale = Astro.currentLocale ?? 'en';
 ---
 
 <ul>
-  {allOrgs.map((org) => (
-    <li>{org.data.name}</li>
-  ))}
+  {
+    allOrgs.map((org) => (
+      <li>
+        <a href={getRelativeLocaleUrl(locale, `organizations/${org.slug}`)}>{org.data.title}</a>
+      </li>
+    ))
+  }
 </ul>
