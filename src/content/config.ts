@@ -23,25 +23,29 @@ const operatingTime = z.object({
   closeTime: z.string(),
 });
 
+const organizationSchema = z.object({
+  title: z.string(),
+  location: z.string(),
+  link: z.string().url().optional(),
+  inTompkinsSquare: z.boolean(),
+  services: possibleServices.array(),
+  accepting: possibleDonations.array(),
+  operatingTimes: z.object({
+    sunday: operatingTime.array().optional(),
+    monday: operatingTime.array().optional(),
+    tuesday: operatingTime.array().optional(),
+    wednesday: operatingTime.array().optional(),
+    thursday: operatingTime.array().optional(),
+    friday: operatingTime.array().optional(),
+    saturday: operatingTime.array().optional(),
+  }),
+});
+
+export type Organization = z.infer<typeof organizationSchema>;
+
 const organizationsCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    title: z.string(),
-    location: z.string(),
-    link: z.string().url().optional(),
-    inTompkinsSquare: z.boolean(),
-    services: possibleServices.array(),
-    accepting: possibleDonations.array(),
-    operatingTimes: z.object({
-      sunday: operatingTime.array().optional(),
-      monday: operatingTime.array().optional(),
-      tuesday: operatingTime.array().optional(),
-      wednesday: operatingTime.array().optional(),
-      thursday: operatingTime.array().optional(),
-      friday: operatingTime.array().optional(),
-      saturday: operatingTime.array().optional(),
-    }),
-  }),
+  schema: organizationSchema,
 });
 
 export const collections = {

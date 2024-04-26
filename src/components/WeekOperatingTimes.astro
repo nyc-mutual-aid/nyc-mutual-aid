@@ -1,0 +1,37 @@
+---
+import { Organization } from '../content/config';
+
+interface Props {
+  operatingTimes: Organization['operatingTimes'];
+}
+
+const { operatingTimes } = Astro.props;
+---
+
+<div>
+  <h3 class="divider">
+    Hours
+  </h3>
+
+  <table class="table">
+    <tbody>
+    {Object.keys(operatingTimes).map((day) => (
+      <tr>
+        <th class="align-text-top">
+          {day}
+        </th>
+
+        <td>
+          <ul>
+            {operatingTimes[day].map(({ openTime, closeTime }) => (
+              <li>
+                { openTime } - { closeTime }
+              </li>
+            ))}
+          </ul>
+        </td>
+      </tr>
+    ))}
+    </tbody>
+  </table>
+</div>

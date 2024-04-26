@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Layout from './Layout.astro';
+import PillList from '../components/PillList.astro';
+import WeekOperatingTimes from '../components/WeekOperatingTimes.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+  };
+}
+
+const { frontmatter: data } = Astro.props;
+
+const allOrgs = await getCollection('organizations');
+const locale = Astro.currentLocale ?? 'en';
+---
+
+<Layout title={data.title}>
+  <h2 class="text-3xl">
+    { data.title }
+  </h2>
+
+  <div class="mt-5 flex flex-col gap-5">
+    {allOrgs.map((org) => (
+      <div class="card card-compact bg-base-100 shadow-lg border border-neutral border-opacity-20">
+        <div class="card-body">
+          <div>
+            <h3 class="card-title">
+              <a href={getRelativeLocaleUrl(locale, `organizations/${org.slug}`)} class="hover:underline">
+                {org.data.title}
+              </a>
+            </h3>
+            <address class="text-lg not-italic">{org.data.location}</address>
+          </div>
+
+          <PillList title="Services" items={org.data.services} />
+          <WeekOperatingTimes operatingTimes={org.data.operatingTimes} />
+        </div>
+      </div>
+    ))}
+  </div>
+</Layout>

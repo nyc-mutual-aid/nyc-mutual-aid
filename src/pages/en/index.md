@@ -1,4 +1,4 @@
 ---
 title: Hello!
-layout: ../../layouts/Home.astro
+layout: ../../layouts/OrganizationList.astro
 ---

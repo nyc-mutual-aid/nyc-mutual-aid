@@ -1,22 +1,51 @@
 ---
+import SiteInfo from '../data/site-info';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+
+const locale = Astro.currentLocale ?? 'en';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Astro description" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+<body>
+	<div class="navbar bg-neutral text-neutral-content flex flex-col">
+		<div class="">
+			<h1 class="text-xl">
+				{SiteInfo.title}
+			</h1>
+		</div>
+
+		<div class="">
+			<ul class="menu menu-horizontal px-1">
+				<li>
+					<a href={getRelativeLocaleUrl(locale)}>
+						Organizations
+					</a>
+				</li>
+				<li>
+					<a href={getRelativeLocaleUrl(locale, 'about')}>
+						About
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<main class="container py-5 px-3">
 		<slot />
+	</main>
 	</body>
 </html>
