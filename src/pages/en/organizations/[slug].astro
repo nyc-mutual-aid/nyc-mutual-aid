@@ -1,9 +1,8 @@
 ---
 // title: Organization
 
-import Organization from '../../layouts/Organization.astro';
+import Organization from '../../../layouts/Organization.astro';
 import { getCollection } from 'astro:content';
-export const layout = '../../layouts/Organization.astro';
 
 export async function getStaticPaths() {
   const orgs = await getCollection('organizations');
