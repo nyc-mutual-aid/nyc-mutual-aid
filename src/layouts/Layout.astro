@@ -1,6 +1,6 @@
 ---
-import { t, l } from 'astro-i18n';
-import { astroI18n } from 'astro-i18n';
+import { astroI18n, t, l } from 'astro-i18n';
+import { localeLabels } from '../../astro-i18n.config';
 
 interface Props {
 	title: string;
@@ -12,6 +12,8 @@ let localeDirection = 'ltr';
 if (astroI18n.locale === 'ar') {
 	localeDirection = 'rtl';
 }
+
+
 ---
 
 <!doctype html>
@@ -25,7 +27,7 @@ if (astroI18n.locale === 'ar') {
 </head>
 <body>
 	<div class="navbar bg-neutral text-neutral-content flex flex-col">
-		<div class="">
+		<div class="flex flex-col gap-2">
 			<h1 class="text-xl">
 				{t('site.title')}
 			</h1>
@@ -43,6 +45,20 @@ if (astroI18n.locale === 'ar') {
 						{t('About')}
 					</a>
 				</li>
+
+				<li>
+					<details>
+						<summary>{t('Language')}</summary>
+						<ul class="shadow text-base-content z-10 bg-base-100 rounded-box p-2">
+							{astroI18n.locales.map((targetLocale) => (
+								<li>
+									<a href={l(astroI18n.route, undefined, { targetLocale })}>
+										{localeLabels[targetLocale]}
+									</a>
+								</li>
+							))}
+						</ul>
+					</details>
 			</ul>
 		</div>
 	</div>

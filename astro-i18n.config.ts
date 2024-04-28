@@ -1,5 +1,12 @@
 import { defineAstroI18nConfig } from 'astro-i18n'
 
+export const localeLabels = {
+	ar: 'العربية',
+	en: 'English',
+	es: 'Español',
+	fr: 'Français',
+} as const;
+
 export default defineAstroI18nConfig({
 	primaryLocale: 'en',
 	secondaryLocales: ['es', 'ar', 'fr'],
@@ -40,6 +47,7 @@ export default defineAstroI18nConfig({
 				Organizations: 'Organizaciones',
 				About: 'Sobre',
 				Services: 'Servicios',
+				Language: 'Idioma',
 				'Accepted Donations': 'Donaciones aceptadas',
 				Hours: 'Horas',
 				days: {
@@ -69,6 +77,7 @@ export default defineAstroI18nConfig({
 			ar: {
 				Organizations: 'المنظمات',
 				About: 'عن',
+				Language: 'لغة',
 				Services: 'خدمات',
 				'Accepted Donations': 'التبرعات المقبولة',
 				Hours: 'ساعات',
@@ -99,6 +108,7 @@ export default defineAstroI18nConfig({
 			fr: {
 				Organizations: 'Organisations',
 				About: 'À Propos',
+				Language: 'Langue',
 				Services: 'Services',
 				'Accepted Donations': 'Dons Acceptés',
 				Hours: 'Heures',
