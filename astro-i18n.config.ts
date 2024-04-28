@@ -2,7 +2,7 @@ import { defineAstroI18nConfig } from 'astro-i18n'
 
 export default defineAstroI18nConfig({
 	primaryLocale: 'en',
-	secondaryLocales: ['es'],
+	secondaryLocales: ['es', 'ar'],
 	fallbackLocale: 'en',
 	trailingSlash: 'never',
 	run: 'client+server',
@@ -66,12 +66,46 @@ export default defineAstroI18nConfig({
 					title: 'NYC Mutual Aid'
 				}
 			},
+			ar: {
+				Organizations: 'المنظمات',
+				About: 'عن',
+				Services: 'خدمات',
+				'Accepted Donations': 'التبرعات المقبولة',
+				Hours: 'ساعات',
+				days: {
+					monday: 'الاثنين',
+					tuesday: 'يوم الثلاثاء',
+					wednesday: 'الأربعاء',
+					thursday: 'يوم الخميس',
+					friday: 'جمعة',
+					saturday: 'السبت',
+					sunday: 'الأحد',
+				},
+				resources: {
+					charging: 'الشحن',
+					clothing: 'ملابس',
+					food: 'طعام',
+					funding: 'التمويل',
+					hygiene: 'صحة',
+					misc: 'متنوع',
+					resources: 'موارد',
+					rest: 'استراحة',
+					toiletries: 'مستلزمات المرحاض',
+				},
+				site: {
+					title: 'مدينة نيويورك للمساعدات المتبادلة'
+				},
+			},
 		},
 	},
 	routes: {
 		es: {
 			about: 'sobre',
 			organizations: 'organizaciones',
+		},
+		ar: {
+			about: 'about',
+			organizations: 'organizations',
 		},
 	},
 });

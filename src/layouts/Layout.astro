@@ -8,10 +8,8 @@ interface Props {
 
 const { title } = Astro.props;
 
-const locale = astroI18n.locale;
 let localeDirection = 'ltr';
-
-if (locale === 'ar') {
+if (astroI18n.locale === 'ar') {
 	localeDirection = 'rtl';
 }
 ---
