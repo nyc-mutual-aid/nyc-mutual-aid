@@ -2,7 +2,7 @@ import { defineAstroI18nConfig } from 'astro-i18n'
 
 export default defineAstroI18nConfig({
 	primaryLocale: 'en',
-	secondaryLocales: ['es', 'ar'],
+	secondaryLocales: ['es', 'ar', 'fr'],
 	fallbackLocale: 'en',
 	trailingSlash: 'never',
 	run: 'client+server',
@@ -96,6 +96,36 @@ export default defineAstroI18nConfig({
 					title: 'مدينة نيويورك للمساعدات المتبادلة'
 				},
 			},
+			fr: {
+				Organizations: 'Organisations',
+				About: 'À Propos',
+				Services: 'Services',
+				'Accepted Donations': 'Dons Acceptés',
+				Hours: 'Heures',
+				days: {
+					monday: 'lundi',
+					tuesday: 'Mardi',
+					wednesday: 'Mercredi',
+					thursday: 'Jeudi',
+					friday: 'vendredi',
+					saturday: 'Samedi',
+					sunday: 'Dimanche',
+				},
+				resources: {
+					charging: 'Station de Recharge',
+					clothing: 'Vêtements',
+					food: 'Nourriture',
+					funding: 'Financement',
+					hygiene: 'hygiène',
+					misc: 'Divers',
+					resources: 'Ressources',
+					rest: 'Repos',
+					toiletries: 'Articles de Toilette',
+				},
+				site: {
+					title: 'Entraide de NYC'
+				},
+			},
 		},
 	},
 	routes: {
@@ -106,6 +136,10 @@ export default defineAstroI18nConfig({
 		ar: {
 			about: 'about',
 			organizations: 'organizations',
+		},
+		fr: {
+			about: 'a-propos',
+			organizations: 'organisations',
 		},
 	},
 });
