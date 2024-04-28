@@ -1,6 +1,7 @@
 ---
-import { astroI18n, t, l } from 'astro-i18n';
+import { astroI18n, t } from 'astro-i18n';
 import { localeLabels } from '../../astro-i18n.config';
+import { l } from '../utils';
 
 interface Props {
 	title: string;
@@ -50,9 +51,9 @@ if (astroI18n.locale === 'ar') {
 					<details>
 						<summary>{t('Language')}</summary>
 						<ul class="shadow text-base-content z-10 bg-base-100 rounded-box p-2">
-							{astroI18n.locales.map((targetLocale) => (
+							{astroI18n.locales.sort().map((targetLocale) => (
 								<li>
-									<a href={l(astroI18n.route, undefined, { targetLocale })}>
+									<a href={l(astroI18n.route, { targetLocale })}>
 										{localeLabels[targetLocale]}
 									</a>
 								</li>
