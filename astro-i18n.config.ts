@@ -113,11 +113,11 @@ export default defineAstroI18nConfig({
 				'Accepted Donations': 'Dons Acceptés',
 				Hours: 'Heures',
 				days: {
-					monday: 'lundi',
+					monday: 'Lundi',
 					tuesday: 'Mardi',
 					wednesday: 'Mercredi',
 					thursday: 'Jeudi',
-					friday: 'vendredi',
+					friday: 'Vendredi',
 					saturday: 'Samedi',
 					sunday: 'Dimanche',
 				},
