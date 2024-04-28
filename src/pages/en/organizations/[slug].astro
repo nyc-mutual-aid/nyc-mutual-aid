@@ -1,6 +1,10 @@
 ---
-import Organization from '../../../layouts/Organization.astro';
 import { getCollection } from 'astro:content';
+import { t } from 'astro-i18n';
+import Layout from '../../../layouts/Layout.astro';
+import WeekOperatingTimes from '../../../components/WeekOperatingTimes.astro';
+import PillList from '../../../components/PillList.astro';
+import { Organization } from '../../../content/config';
 
 export async function getStaticPaths() {
   const orgs = await getCollection('organizations');
@@ -8,6 +12,32 @@ export async function getStaticPaths() {
     params: { slug: org.slug }, props: { org: org.data },
   }));
 }
+
+interface Props {
+  org: Organization;
+}
+
+const { org } = Astro.props;
 ---
 
-<Organization org={Astro.props.org} />
+<Layout title={org.title}>
+  <div>
+    <h2 class="text-3xl">
+      {org.title}
+    </h2>
+
+    <address class="text-lg not-italic">{org.location}</address>
+  </div>
+
+  <PillList
+      title={t('Services')}
+      items={org.services.map((s) => t(`resources.${s}`))}
+  />
+
+  <PillList
+      title={t('Accepted Donations')}
+      items={org.accepting.map((s) => t(`resources.${s}`))}
+  />
+
+  <WeekOperatingTimes operatingTimes={org.operatingTimes} />
+</Layout>

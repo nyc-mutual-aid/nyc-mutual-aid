@@ -1,18 +1,23 @@
 {
-  "name": "nyc-mutual-aid-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro sync && astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^4.7.0",
-    "@astrojs/check": "^0.5.10",
-    "typescript": "^5.4.5"
-  }
+	"name": "nyc-mutual-aid-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "yarn i18n:sync && astro sync && astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"i18n:extract": "astro-i18n extract",
+		"i18n:generate:pages": "astro-i18n generate:pages --purge",
+		"i18n:generate:types": "astro-i18n generate:types",
+		"i18n:sync": "npm run i18n:generate:pages && npm run i18n:generate:types"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.5.10",
+		"astro": "^4.7.0",
+		"astro-i18n": "^2.2.4",
+		"typescript": "^5.4.5"
+	}
 }

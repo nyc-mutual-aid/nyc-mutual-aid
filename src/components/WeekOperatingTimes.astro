@@ -1,4 +1,5 @@
 ---
+import { t } from 'astro-i18n';
 import { Organization } from '../content/config';
 
 interface Props {
@@ -10,7 +11,7 @@ const { operatingTimes } = Astro.props;
 
 <div>
   <h3 class="divider">
-    Hours
+    {t('Hours')}
   </h3>
 
   <table class="table">
@@ -18,7 +19,7 @@ const { operatingTimes } = Astro.props;
     {Object.keys(operatingTimes).map((day) => (
       <tr>
         <th class="align-text-top">
-          {day}
+          {t(`days.${day}`)}
         </th>
 
         <td>
