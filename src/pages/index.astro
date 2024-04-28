@@ -1,0 +1,18 @@
+---
+import { l } from '../utils';
+
+const defaultHome = l('/')
+---
+
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="refresh" content={`0; URL=${defaultHome}`}>
+  <link rel="canonical" href={defaultHome}>
+</head>
+<body>
+  <p>
+    Redirecting to {defaultHome}...
+  </p>
+</body>
+</html>

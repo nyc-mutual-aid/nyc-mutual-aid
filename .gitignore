@@ -23,5 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-src/pages/*
-!src/pages/en/
+src/pages/ar
+src/pages/es
+src/pages/fr

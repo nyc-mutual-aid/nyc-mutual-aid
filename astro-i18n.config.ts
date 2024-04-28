@@ -20,7 +20,8 @@ export default defineAstroI18nConfig({
 		common: {
 			en: {
 				site: {
-					title: 'NYC Mutual Aid'
+					title: 'NYC Mutual Aid',
+					description: 'Find mutual aid resources around New York City.'
 				},
 				days: {
 					monday: 'Monday',
