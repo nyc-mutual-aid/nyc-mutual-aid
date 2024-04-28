@@ -1,9 +1,9 @@
 ---
 import { t } from 'astro-i18n';
-import { Organization } from '../content/config';
+import type { OperatingTime } from '../content/config';
 
 interface Props {
-  operatingTimes: Organization['operatingTimes'];
+  operatingTimes: Record<string, OperatingTime[]>;
 }
 
 const { operatingTimes } = Astro.props;
@@ -16,7 +16,7 @@ const { operatingTimes } = Astro.props;
 
   <table class="table">
     <tbody>
-    {Object.keys(operatingTimes).map((day) => (
+    {Object.keys(operatingTimes).map((day: string) => (
       <tr>
         <th class="align-text-top">
           {t(`days.${day}`)}
@@ -24,9 +24,9 @@ const { operatingTimes } = Astro.props;
 
         <td>
           <ul>
-            {operatingTimes[day].map(({ openTime, closeTime }) => (
+            {operatingTimes[day].map((time: OperatingTime) => (
               <li>
-                { openTime } - { closeTime }
+                {time.openTime} - {time.closeTime}
               </li>
             ))}
           </ul>

@@ -42,6 +42,7 @@ const organizationSchema = z.object({
 });
 
 export type Organization = z.infer<typeof organizationSchema>;
+export type OperatingTime = z.infer<typeof operatingTime>;
 
 const organizationsCollection = defineCollection({
   type: 'content',

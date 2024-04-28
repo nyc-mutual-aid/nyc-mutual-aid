@@ -4,7 +4,7 @@ import { t } from 'astro-i18n';
 import Layout from '../../../layouts/Layout.astro';
 import WeekOperatingTimes from '../../../components/WeekOperatingTimes.astro';
 import PillList from '../../../components/PillList.astro';
-import { Organization } from '../../../content/config';
+import type { Organization } from '../../../content/config';
 
 export async function getStaticPaths() {
   const orgs = await getCollection('organizations');
