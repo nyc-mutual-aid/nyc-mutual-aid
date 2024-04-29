@@ -52,6 +52,8 @@ export default defineAstroI18nConfig({
 				'Accepted Donations': 'Donaciones aceptadas',
 				Hours: 'Horas',
 				Unavailable: 'Indisponible',
+				'Only Today': 'Solo Hoy',
+				Website: 'Sitio Web',
 				days: {
 					monday: 'Lunes',
 					tuesday: 'Martes',
@@ -84,6 +86,8 @@ export default defineAstroI18nConfig({
 				'Accepted Donations': 'التبرعات المقبولة',
 				Hours: 'ساعات',
 				Unavailable: 'غير متوفره',
+				'Only Today': 'اليوم فقط',
+				Website: 'موقع إلكتروني',
 				days: {
 					monday: 'الاثنين',
 					tuesday: 'يوم الثلاثاء',
@@ -116,6 +120,8 @@ export default defineAstroI18nConfig({
 				'Accepted Donations': 'Dons Acceptés',
 				Hours: 'Heures',
 				Unavailable: 'Indisponible',
+				'Only Today': "Seulement aujourd'hui",
+				Website: 'Site web',
 				days: {
 					monday: 'Lundi',
 					tuesday: 'Mardi',

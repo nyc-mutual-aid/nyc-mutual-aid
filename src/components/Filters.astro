@@ -1,3 +1,7 @@
+---
+import { t } from 'astro-i18n';
+---
+
 <script>
   import { DateTime } from 'luxon';
 
@@ -30,7 +34,7 @@
 <div class="mt-3">
   <div class="form-control">
     <label class="label cursor-pointer w-fit gap-2">
-      <span class="label-text">Only Today</span>
+      <span class="label-text">{t('Only Today')}</span>
       <input data-js="only-today-toggle" type="checkbox" class="toggle toggle-primary" />
     </label>
   </div>

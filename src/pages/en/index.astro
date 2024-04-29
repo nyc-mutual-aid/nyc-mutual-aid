@@ -37,7 +37,7 @@ const allOrgs = await getCollection('organizations');
 
             {org.data.link && (
               <a href={org.data.link} target="_blank" class="link flex items-end gap-1 mt-2">
-                Website
+                {t('Website')}
                 <ExternalIcon />
               </a>
             )}
