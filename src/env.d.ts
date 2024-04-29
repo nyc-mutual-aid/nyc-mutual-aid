@@ -8,7 +8,7 @@ type SecondaryLocale = "es"|"ar"|"fr"
 type Locale = PrimaryLocale | SecondaryLocale
 type RouteParameters = {"/en/about":undefined;"/en":undefined;"/en/organizations/[slug]":{"slug":unknown;};}
 type Route = keyof RouteParameters
-type TranslationVariables = {"site.title":object|undefined;"days.monday":object|undefined;"days.tuesday":object|undefined;"days.wednesday":object|undefined;"days.thursday":object|undefined;"days.friday":object|undefined;"days.saturday":object|undefined;"days.sunday":object|undefined;"resources.charging":object|undefined;"resources.clothing":object|undefined;"resources.food":object|undefined;"resources.funding":object|undefined;"resources.hygiene":object|undefined;"resources.misc":object|undefined;"resources.resources":object|undefined;"resources.rest":object|undefined;"resources.toiletries":object|undefined;}
+type TranslationVariables = {"site.title":object|undefined;"site.description":object|undefined;"days.monday":object|undefined;"days.tuesday":object|undefined;"days.wednesday":object|undefined;"days.thursday":object|undefined;"days.friday":object|undefined;"days.saturday":object|undefined;"days.sunday":object|undefined;"resources.charging":object|undefined;"resources.clothing":object|undefined;"resources.food":object|undefined;"resources.funding":object|undefined;"resources.hygiene":object|undefined;"resources.misc":object|undefined;"resources.resources":object|undefined;"resources.rest":object|undefined;"resources.toiletries":object|undefined;}
 type Translation = keyof TranslationVariables
 type Environment = "none"|"node"|"browser"
 declare module "astro-i18n" {

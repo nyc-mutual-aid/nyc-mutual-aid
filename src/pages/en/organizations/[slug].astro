@@ -30,14 +30,16 @@ const { org } = Astro.props;
   </div>
 
   <PillList
-      title={t('Services')}
-      items={org.services.map((s) => t(`resources.${s}`))}
+    title={t('Services')}
+    items={org.services.map((s) => t(`resources.${s}`))}
   />
 
-  <PillList
+  {org.accepting && (
+    <PillList
       title={t('Accepted Donations')}
       items={org.accepting.map((s) => t(`resources.${s}`))}
-  />
+    />
+  )}
 
   <WeekOperatingTimes operatingTimes={org.operatingTimes} />
 </Layout>

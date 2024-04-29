@@ -1,7 +1,6 @@
 ---
-title: 'Mary House (Serving Women Only)'
-location: '55 E 3rd St'
-inTompkinsSquare: false
+title: Mary House (Serving Women Only)
+location: 55 E 3rd St
 services:
   - clothing
   - food
@@ -10,15 +9,15 @@ accepting:
   - funding
 operatingTimes:
   tuesday:
-    - openTime: '12:00pm'
-      closeTime: '1:30pm'
+    - openTime: '12:00'
+      closeTime: '13:30'
   wednesday:
-    - openTime: '12:00pm'
-      closeTime: '1:30pm'
+    - openTime: '12:00'
+      closeTime: '13:30'
   thursday:
-    - openTime: '12:00pm'
-      closeTime: '1:30pm'
+    - openTime: '12:00'
+      closeTime: '13:30'
   friday:
-    - openTime: '12:00pm'
-      closeTime: '1:30pm'
+    - openTime: '12:00'
+      closeTime: '13:30'
 ---

@@ -1,8 +1,7 @@
 ---
-title: 'Bowery Mission'
-location: '227 Bowery'
-link: 'https://www.bowery.org'
-inTompkinsSquare: false
+title: Bowery Mission
+location: 227 Bowery
+link: https://www.bowery.org
 services:
   - clothing
   - food
@@ -16,42 +15,42 @@ accepting:
   - hygiene
 operatingTimes:
   monday:
-    - openTime: '8:00am'
-      closeTime: '9:00am'
-    - openTime: '1:00pm'
-      closeTime: '2:00pm'
-    - openTime: '5:30pm'
-      closeTime: '6:00pm'
+    - openTime: '8:00'
+      closeTime: '9:00'
+    - openTime: '13:00'
+      closeTime: '14:00'
+    - openTime: '17:30'
+      closeTime: '18:00'
 
   tuesday:
-    - openTime: '8:00am'
-      closeTime: '9:00am'
-    - openTime: '1:00pm'
-      closeTime: '2:00pm'
-    - openTime: '5:30pm'
-      closeTime: '6:00pm'
+    - openTime: '8:00'
+      closeTime: '9:00'
+    - openTime: '13:00'
+      closeTime: '14:00'
+    - openTime: '17:30'
+      closeTime: '18:00'
 
   wednesday:
-    - openTime: '8:00am'
-      closeTime: '9:00am'
-    - openTime: '1:00pm'
-      closeTime: '2:00pm'
-    - openTime: '5:30pm'
-      closeTime: '6:00pm'
+    - openTime: '8:00'
+      closeTime: '9:00'
+    - openTime: '13:00'
+      closeTime: '14:00'
+    - openTime: '17:30'
+      closeTime: '18:00'
 
   thursday:
-    - openTime: '8:00am'
-      closeTime: '9:00am'
-    - openTime: '1:00pm'
-      closeTime: '2:00pm'
-    - openTime: '5:30pm'
-      closeTime: '6:00pm'
+    - openTime: '8:00'
+      closeTime: '9:00'
+    - openTime: '13:00'
+      closeTime: '14:00'
+    - openTime: '17:30'
+      closeTime: '18:00'
 
   friday:
-    - openTime: '8:00am'
-      closeTime: '9:00am'
-    - openTime: '1:00pm'
-      closeTime: '2:00pm'
-    - openTime: '5:30pm'
-      closeTime: '6:00pm'
+    - openTime: '8:00'
+      closeTime: '9:00'
+    - openTime: '13:00'
+      closeTime: '14:00'
+    - openTime: '17:30'
+      closeTime: '18:00'
 ---

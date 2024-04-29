@@ -20,16 +20,16 @@ const possibleDonations = z.enum([
 
 const operatingTime = z.object({
   openTime: z.string(), // TODO: look at time filters
-  closeTime: z.string(),
+  closeTime: z.string().optional(),
 });
 
 const organizationSchema = z.object({
   title: z.string(),
   location: z.string(),
   link: z.string().url().optional(),
-  inTompkinsSquare: z.boolean(),
+  inTompkinsSquare: z.boolean().optional(),
   services: possibleServices.array(),
-  accepting: possibleDonations.array(),
+  accepting: possibleDonations.array().optional(),
   operatingTimes: z.object({
     sunday: operatingTime.array().optional(),
     monday: operatingTime.array().optional(),

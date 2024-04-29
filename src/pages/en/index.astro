@@ -29,13 +29,8 @@ const allOrgs = await getCollection('organizations');
           </div>
 
           <PillList
-              title={t('Services')}
-              items={org.data.services.map((s) => t(`resources.${s}`))}
-          />
-
-          <PillList
-              title={t('Accepted Donations')}
-              items={org.data.accepting.map((s) => t(`resources.${s}`))}
+            title={t('Services')}
+            items={org.data.services.map((s) => t(`resources.${s}`))}
           />
 
           <WeekOperatingTimes operatingTimes={org.data.operatingTimes} />
