@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://nyc-mutual-aid.github.io',
-  base: '',
+  base: 'nyc-mutual-aid',
   integrations: [tailwind()]
 });
