@@ -28,8 +28,17 @@ const days: (keyof Organization['operatingTimes'])[] = [
     const { weekday } = DateTime.now().setZone('America/New_York');
     const rowsToHighlight = document.querySelectorAll(`[data-weekday="${weekday}"`);
 
-    rowsToHighlight.forEach((row: HTMLElement) => {
-      row.classList.add(row.dataset.highlightClass);
+    rowsToHighlight.forEach((row) => {
+      if (row instanceof HTMLElement) {
+        const { highlightClass } = row.dataset;
+        if (highlightClass) {
+          row.classList.add(highlightClass);
+        } else {
+          console.error('Missing a highlight class');
+        }
+      } else {
+        console.error('Trying to highlight something that is not an element:', row)
+      }
     });
   });
 </script>

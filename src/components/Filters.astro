@@ -6,7 +6,7 @@
   function toggleUnavailable(shouldHide: boolean) {
     const { weekday } = DateTime.now().setZone('America/New_York');
     const orgsToHide = document.querySelectorAll(`[data-organization-card]:has([data-weekday="${weekday}"] [data-day-unavailable])`);
-    orgsToHide.forEach((orgCard: HTMLElement) => {
+    orgsToHide.forEach((orgCard) => {
       if (shouldHide) {
         orgCard.classList.add('hidden');
       } else {
@@ -24,7 +24,7 @@
   }
 
   handleInput(onlyTodayToggle)
-  onlyTodayToggle.addEventListener('click', ({ target }) => handleInput(target));
+  onlyTodayToggle?.addEventListener('click', ({ target }) => handleInput(target));
 </script>
 
 <div class="mt-3">
