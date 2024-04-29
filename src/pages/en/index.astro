@@ -7,6 +7,7 @@ import Layout from '../../layouts/Layout.astro';
 import WeekOperatingTimes from '../../components/WeekOperatingTimes.astro';
 import PillList from '../../components/PillList.astro';
 import ExternalIcon from '../../components/ExternalIcon.astro';
+import Filters from '../../components/Filters.astro';
 
 const allOrgs = await getCollection('organizations');
 ---
@@ -16,9 +17,14 @@ const allOrgs = await getCollection('organizations');
     {t('Organizations')}
   </h2>
 
+  <Filters />
+
   <div class="mt-5 flex flex-col gap-5">
     {allOrgs.map((org) => (
-      <div class="card card-compact bg-base-100 shadow-lg border border-neutral border-opacity-20">
+      <div
+        class="card card-compact bg-base-100 shadow-lg border border-neutral border-opacity-20"
+        data-organization-card
+      >
         <div class="card-body">
           <div>
             <h3 class="card-title">

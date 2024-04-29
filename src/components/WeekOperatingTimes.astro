@@ -66,7 +66,7 @@ const days: (keyof Organization['operatingTimes'])[] = [
                 </li>
               ))
               : (
-                <li>
+                <li data-day-unavailable>
                   <span class="sr-only">
                     {t('Unavailable')}
                   </span>

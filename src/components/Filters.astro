@@ -1,0 +1,37 @@
+<script>
+  import { DateTime } from 'luxon';
+
+  const onlyTodayToggle = document.querySelector('[data-js="only-today-toggle"]');
+
+  function toggleUnavailable(shouldHide: boolean) {
+    const { weekday } = DateTime.now().setZone('America/New_York');
+    const orgsToHide = document.querySelectorAll(`[data-organization-card]:has([data-weekday="${weekday}"] [data-day-unavailable])`);
+    orgsToHide.forEach((orgCard: HTMLElement) => {
+      if (shouldHide) {
+        orgCard.classList.add('hidden');
+      } else {
+        orgCard.classList.remove('hidden');
+      }
+    });
+  }
+
+  function handleInput(el: any) {
+    if (!(el instanceof HTMLInputElement)) {
+      throw new Error('only today toggle needs to be a checkbox input');
+    }
+
+    toggleUnavailable(el.checked)
+  }
+
+  handleInput(onlyTodayToggle)
+  onlyTodayToggle.addEventListener('click', ({ target }) => handleInput(target));
+</script>
+
+<div class="mt-3">
+  <div class="form-control">
+    <label class="label cursor-pointer w-fit gap-2">
+      <span class="label-text">Only Today</span>
+      <input data-js="only-today-toggle" type="checkbox" class="toggle toggle-primary" />
+    </label>
+  </div>
+</div>
