@@ -8,6 +8,8 @@ interface Props {
 
 const { operatingTimes } = Astro.props;
 
+// ISO weekday has Monday as first,
+// so don't change this order or the highlight will be wrong.
 const days: (keyof Organization['operatingTimes'])[] = [
   'monday',
   'tuesday',
@@ -16,8 +18,21 @@ const days: (keyof Organization['operatingTimes'])[] = [
   'friday',
   'saturday',
   'sunday',
-]
+];
 ---
+
+<script>
+  import { DateTime } from 'luxon';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const { weekday } = DateTime.now().setZone('America/New_York');
+    const rowsToHighlight = document.querySelectorAll(`[data-weekday="${weekday}"`);
+
+    rowsToHighlight.forEach((row: HTMLElement) => {
+      row.classList.add(row.dataset.highlightClass);
+    });
+  });
+</script>
 
 <div>
   <h3 class="divider">
@@ -26,8 +41,8 @@ const days: (keyof Organization['operatingTimes'])[] = [
 
   <table class="table">
     <tbody>
-    {days.map((day) => (
-      <tr>
+    {days.map((day, i) => (
+      <tr data-weekday={i + 1} data-highlight-class="bg-base-200">
         <th class="align-text-top w-1/4">
           {t(`days.${day}`)}
         </th>
