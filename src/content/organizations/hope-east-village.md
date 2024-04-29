@@ -16,6 +16,6 @@ operatingTimes:
     - openTime: '12:00'
       closeTime: '16:00'
   saturday:
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '14:00'
 ---

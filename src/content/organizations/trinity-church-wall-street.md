@@ -9,31 +9,31 @@ accepting:
   - funding
 operatingTimes:
   monday: 
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '10:00'
     - openTime: '12:00'
       closeTime: '13:00'
 
   tuesday:
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '10:00'
     - openTime: '12:00'
       closeTime: '13:00'
 
   wednesday:
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '10:00'
     - openTime: '12:00'
       closeTime: '13:00'
 
   thursday:
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '10:00'
     - openTime: '12:00'
       closeTime: '13:00'
 
   friday:
-    - openTime: '9:00'
+    - openTime: '09:00'
       closeTime: '10:00'
     - openTime: '12:00'
       closeTime: '13:00'

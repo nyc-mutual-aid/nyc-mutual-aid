@@ -18,9 +18,10 @@ const possibleDonations = z.enum([
   'hygiene',
 ]);
 
+const timePattern = /^\d\d:\d\d$/
 const operatingTime = z.object({
-  openTime: z.string(), // TODO: look at time filters
-  closeTime: z.string().optional(),
+  openTime: z.string().regex(timePattern),
+  closeTime: z.string().regex(timePattern).optional(),
 });
 
 const organizationSchema = z.object({

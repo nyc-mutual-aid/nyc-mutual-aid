@@ -10,31 +10,31 @@ accepting:
   - clothing
 operatingTimes:
   monday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
     - openTime: '12:30'
       closeTime: '14:00'
 
   tuesday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
     - openTime: '12:30'
       closeTime: '14:00'
 
   wednesday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
     - openTime: '12:30'
       closeTime: '14:00'
 
   thursday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
     - openTime: '12:30'
       closeTime: '14:00'
 
   friday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
     - openTime: '12:30'
       closeTime: '14:00'

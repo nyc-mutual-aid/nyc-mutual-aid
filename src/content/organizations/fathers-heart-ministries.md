@@ -5,6 +5,6 @@ services:
   - food
 operatingTimes:
   saturday:
-    - openTime: '9:30'
+    - openTime: '09:30'
       closeTime: '11:00'
 ---

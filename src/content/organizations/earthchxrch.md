@@ -8,18 +8,18 @@ accepting:
   - clothing
 operatingTimes:
   monday:
-    - openTime: '8:00'
+    - openTime: '08:00'
       closeTime: '16:00'
   tuesday:
-    - openTime: '8:00'
+    - openTime: '08:00'
       closeTime: '16:00'
   wednesday:
-    - openTime: '8:00'
+    - openTime: '08:00'
       closeTime: '16:00'
   thursday:
-    - openTime: '8:00'
+    - openTime: '08:00'
       closeTime: '16:00'
   friday:
-    - openTime: '8:00'
+    - openTime: '08:00'
       closeTime: '16:00'
 ---

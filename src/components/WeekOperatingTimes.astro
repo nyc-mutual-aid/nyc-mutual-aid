@@ -1,7 +1,6 @@
 ---
 import { t } from 'astro-i18n';
 import type { OperatingTime, Organization } from '../content/config';
-import { loadId } from 'astro/dist/vite-plugin-astro/utils';
 
 interface Props {
   operatingTimes: Organization['operatingTimes'];
@@ -27,7 +26,7 @@ const days: (keyof Organization['operatingTimes'])[] = [
 
   <table class="table">
     <tbody>
-    {days.map((day: string) => (
+    {days.map((day) => (
       <tr>
         <th class="align-text-top w-1/4">
           {t(`days.${day}`)}
@@ -36,12 +35,17 @@ const days: (keyof Organization['operatingTimes'])[] = [
         <td>
           <ul class="text-center">
             {operatingTimes[day]
-              ? operatingTimes[day].map(({ openTime, closeTime }: OperatingTime) => (
+              ? operatingTimes[day]?.map(({ openTime, closeTime }: OperatingTime) => (
                 <li>
-                  {openTime}
+                  <time datetime={openTime}>
+                    {openTime}
+                  </time>
                   {closeTime && (
                     <>
-                      - {closeTime}
+                      -
+                      <time datetime={closeTime}>
+                        {closeTime}
+                      </time>
                     </>
                   )}
                 </li>
