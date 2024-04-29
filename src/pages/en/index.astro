@@ -6,6 +6,7 @@ import { l } from '../../utils';
 import Layout from '../../layouts/Layout.astro';
 import WeekOperatingTimes from '../../components/WeekOperatingTimes.astro';
 import PillList from '../../components/PillList.astro';
+import ExternalIcon from '../../components/ExternalIcon.astro';
 
 const allOrgs = await getCollection('organizations');
 ---
@@ -25,7 +26,15 @@ const allOrgs = await getCollection('organizations');
                 {org.data.title}
               </a>
             </h3>
+
             <address class="text-lg not-italic">{org.data.location}</address>
+
+            {org.data.link && (
+              <a href={org.data.link} target="_blank" class="link flex items-end gap-1 mt-2">
+                Website
+                <ExternalIcon />
+              </a>
+            )}
           </div>
 
           <PillList

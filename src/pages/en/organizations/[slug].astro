@@ -5,6 +5,7 @@ import Layout from '../../../layouts/Layout.astro';
 import WeekOperatingTimes from '../../../components/WeekOperatingTimes.astro';
 import PillList from '../../../components/PillList.astro';
 import type { Organization } from '../../../content/config';
+import ExternalIcon from '../../../components/ExternalIcon.astro';
 
 export async function getStaticPaths() {
   const orgs = await getCollection('organizations');
@@ -27,6 +28,13 @@ const { org } = Astro.props;
     </h2>
 
     <address class="text-lg not-italic">{org.location}</address>
+
+    {org.link && (
+      <a href={org.link} target="_blank" class="link flex items-end gap-1 mt-2">
+        Website
+        <ExternalIcon />
+      </a>
+    )}
   </div>
 
   <PillList
