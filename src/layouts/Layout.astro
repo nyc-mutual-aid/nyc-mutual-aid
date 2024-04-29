@@ -2,6 +2,7 @@
 import { astroI18n, t } from 'astro-i18n';
 import { localeLabels } from '../../astro-i18n.config';
 import { l } from '../utils';
+import astroConfig from '../../astro.config.mjs';
 
 interface Props {
 	title: string;
@@ -27,10 +28,11 @@ if (astroI18n.locale === 'ar') {
 
 	<title>{title}</title>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
+	<link rel="apple-touch-icon" sizes="180x180" href={`/${astroConfig.base}/apple-touch-icon.png`} />
+	<link rel="icon" type="image/png" sizes="32x32" href={`/${astroConfig.base}/favicon-32x32.png`} />
+	<link rel="icon" type="image/png" sizes="16x16" href={`/${astroConfig.base}/favicon-16x16.png`} />
+	<link rel="icon" type="image/ico" href={`/${astroConfig.base}/favicon.ico`} />
+	<link rel="manifest" href={`/${astroConfig.base}/site.webmanifest`} />
 </head>
 <body>
 	<div class="navbar bg-neutral text-neutral-content flex flex-col">
