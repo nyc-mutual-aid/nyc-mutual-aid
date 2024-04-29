@@ -51,6 +51,7 @@ export default defineAstroI18nConfig({
 				Language: 'Idioma',
 				'Accepted Donations': 'Donaciones aceptadas',
 				Hours: 'Horas',
+				Unavailable: 'Indisponible',
 				days: {
 					monday: 'Lunes',
 					tuesday: 'Martes',
@@ -82,6 +83,7 @@ export default defineAstroI18nConfig({
 				Services: 'خدمات',
 				'Accepted Donations': 'التبرعات المقبولة',
 				Hours: 'ساعات',
+				Unavailable: 'غير متوفره',
 				days: {
 					monday: 'الاثنين',
 					tuesday: 'يوم الثلاثاء',
@@ -113,6 +115,7 @@ export default defineAstroI18nConfig({
 				Services: 'Services',
 				'Accepted Donations': 'Dons Acceptés',
 				Hours: 'Heures',
+				Unavailable: 'Indisponible',
 				days: {
 					monday: 'Lundi',
 					tuesday: 'Mardi',

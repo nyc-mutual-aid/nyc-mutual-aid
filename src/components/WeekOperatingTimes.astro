@@ -1,12 +1,23 @@
 ---
 import { t } from 'astro-i18n';
-import type { OperatingTime } from '../content/config';
+import type { OperatingTime, Organization } from '../content/config';
+import { loadId } from 'astro/dist/vite-plugin-astro/utils';
 
 interface Props {
-  operatingTimes: Record<string, OperatingTime[]>;
+  operatingTimes: Organization['operatingTimes'];
 }
 
 const { operatingTimes } = Astro.props;
+
+const days: (keyof Organization['operatingTimes'])[] = [
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday',
+  'sunday',
+]
 ---
 
 <div>
@@ -16,19 +27,35 @@ const { operatingTimes } = Astro.props;
 
   <table class="table">
     <tbody>
-    {Object.keys(operatingTimes).map((day: string) => (
+    {days.map((day: string) => (
       <tr>
-        <th class="align-text-top">
+        <th class="align-text-top w-1/4">
           {t(`days.${day}`)}
         </th>
 
         <td>
-          <ul>
-            {operatingTimes[day].map((time: OperatingTime) => (
-              <li>
-                {time.openTime} - {time.closeTime}
-              </li>
-            ))}
+          <ul class="text-center">
+            {operatingTimes[day]
+              ? operatingTimes[day].map(({ openTime, closeTime }: OperatingTime) => (
+                <li>
+                  {openTime}
+                  {closeTime && (
+                    <>
+                      - {closeTime}
+                    </>
+                  )}
+                </li>
+              ))
+              : (
+                <li>
+                  <span class="sr-only">
+                    {t('Unavailable')}
+                  </span>
+                  <span aria-hidden="true">
+                    -
+                  </span>
+                </li>
+              )}
           </ul>
         </td>
       </tr>
