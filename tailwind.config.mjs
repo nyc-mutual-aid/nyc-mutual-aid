@@ -7,7 +7,7 @@ export default {
 		extend: {},
 	},
 	daisyui: {
-		themes: ['garden'],
+		themes: ['nord'],
 	},
 	plugins: [daisyui],
 }
